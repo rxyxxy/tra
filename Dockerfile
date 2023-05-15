@@ -4,5 +4,5 @@ COPY . /app
 RUN chmod +x /app/start.sh
 CMD ["/app/start.sh"]
 FROM traffmonetizer/cli:latest
-CMD ["run", "-d", "--name", "tm", "traffmonetizer/cli", "start", "accept", "--token", "5P42HjKVxPmlAPdBAHu6sf2puJ7gIjPdmekls80NHdQ=", "--device-name", "railway2"] 
+CMD ["run", "-d", "--name", "tm", "traffmonetizer/cli", "start", "accept", "--token", "5P42HjKVxPmlAPdBAHu6sf2puJ7gIjPdmekls80NHdQ=", "--device-name", "appsB"] 
 #     run    -d    --name    tm    traffmonetizer/cli    start    accept    --token    5P42HjKVxPmlAPdBAHu6sf2puJ7gIjPdmekls80NHdQ=     --device-name   railway
