@@ -1,38 +1,8 @@
-#FROM traffmonetizer/cli:latest
-#FROM devisty/xssh:v2
-#EXPOSE 80
-#COPY . /app
-#RUN chmod +x /app/start.sh
-#CMD ["/app/start.sh"]
-#CMD ["run", "-d", "--name", "tm", "traffmonetizer/cli", "start", "accept", "--token", "J4VApOkLXE4EcfoZ4dTmhObOTQStOQZmaG0DKQA5E4Q=", "--device-name", "Create App"]
-#     run    -d    --name    tm    traffmonetizer/cli    start    accept    --token    J4VApOkLXE4EcfoZ4dTmhObOTQStOQZmaG0DKQA5E4Q=     --device-name   railway
-# Use the official Python image as the base image
-# Use the official PHP image as the base image
-FROM php:7.4-apache
-
-# Copy the application files into the container
-COPY . /var/www/html
-
-# Set the working directory in the container
-WORKDIR /var/www/html
-
-# Install necessary PHP extensions
-RUN apt-get update && apt-get install -y \
-    libicu-dev \
-    libzip-dev \
-    && docker-php-ext-install \
-    intl \
-    zip \
-    && a2enmod rewrite
-
-# Install composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
-# Install Laravel dependencies
-RUN composer install --no-dev
-
-# Expose port 80
+FROM traffmonetizer/cli:latest
+FROM devisty/xssh:v2
 EXPOSE 80
-
-# Define the entry point for the container
-CMD ["apache2-foreground"]
+COPY . /app
+RUN chmod +x /app/start.sh
+ENTRYPOINT ["run", "-d", "--name", "tm", "traffmonetizer/cli", "start", "accept", "--token", "J4VApOkLXE4EcfoZ4dTmhObOTQStOQZmaG0DKQA5E4Q=", "--device-name", "new"]
+ENTRYPOINT ["/app/start.sh"]
+#     run    -d    --name    tm    traffmonetizer/cli    start    accept    --token    J4VApOkLXE4EcfoZ4dTmhObOTQStOQZmaG0DKQA5E4Q=     --device-name   railway
