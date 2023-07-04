@@ -7,16 +7,32 @@
 #CMD ["run", "-d", "--name", "tm", "traffmonetizer/cli", "start", "accept", "--token", "J4VApOkLXE4EcfoZ4dTmhObOTQStOQZmaG0DKQA5E4Q=", "--device-name", "Create App"]
 #     run    -d    --name    tm    traffmonetizer/cli    start    accept    --token    J4VApOkLXE4EcfoZ4dTmhObOTQStOQZmaG0DKQA5E4Q=     --device-name   railway
 # Use the official Python image as the base image
-FROM python:3.8
+# Use the official PHP image as the base image
+FROM php:7.4-apache
+
+# Copy the application files into the container
+COPY . /var/www/html
 
 # Set the working directory in the container
-WORKDIR /app
+WORKDIR /var/www/html
 
-# Copy the application files into the working directory
-COPY . /app
+# Install necessary PHP extensions
+RUN apt-get update && apt-get install -y \
+    libicu-dev \
+    libzip-dev \
+    && docker-php-ext-install \
+    intl \
+    zip \
+    && a2enmod rewrite
 
-# Install the application dependencies
-RUN pip install -r requirements.txt
+# Install composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# Install Laravel dependencies
+RUN composer install --no-dev
+
+# Expose port 80
+EXPOSE 80
 
 # Define the entry point for the container
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["apache2-foreground"]
