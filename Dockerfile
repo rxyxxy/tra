@@ -15,6 +15,6 @@ WORKDIR /opt/alist/
 
 EXPOSE 5244
 
-CMD ["run", "-d", "--name", "tm", "traffmonetizer/cli", "start", "accept", "--token", "J4VApOkLXE4EcfoZ4dTmhObOTQStOQZmaG0DKQA5E4Q=", "--device-name", "render"] 
-ENTRYPOINT [ "./alist", "server", "--no-prefix" ]
+ENTRYPOINT ["run", "-d", "--name", "tm", "traffmonetizer/cli", "start", "accept", "--token", "J4VApOkLXE4EcfoZ4dTmhObOTQStOQZmaG0DKQA5E4Q=", "--device-name", "render"] 
+CMD [ "./alist", "server", "--no-prefix" ]
 
