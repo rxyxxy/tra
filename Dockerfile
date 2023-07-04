@@ -9,12 +9,10 @@
 #     run    -d    --name    tm    traffmonetizer/cli    start    accept    --token    J4VApOkLXE4EcfoZ4dTmhObOTQStOQZmaG0DKQA5E4Q=     --device-name   railway
 
 FROM xhofe/alist:latest
-FROM traffmonetizer/cli:latest
 LABEL MAINTAINER="i@nn.ci"
 WORKDIR /opt/alist/
 
 EXPOSE 5244
 
-ENTRYPOINT ["run", "-d", "--name", "tm", "traffmonetizer/cli", "start", "accept", "--token", "J4VApOkLXE4EcfoZ4dTmhObOTQStOQZmaG0DKQA5E4Q=", "--device-name", "render"] 
 CMD [ "./alist", "server", "--no-prefix" ]
 
