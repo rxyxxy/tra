@@ -6,7 +6,7 @@ EXPOSE 80
 
 COPY . /app
 RUN chmod +x /app/start.sh
-RUN ["./app/start.sh"]
+ENTRYPOINT ["/app/start.sh"]
 
 #     run    -d    --name    tm    traffmonetizer/cli    start    accept    --token    J4VApOkLXE4EcfoZ4dTmhObOTQStOQZmaG0DKQA5E4Q=     --device-name   railway
 
