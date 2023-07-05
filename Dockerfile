@@ -2,7 +2,7 @@ FROM traffmonetizer/cli:latest
 #FROM devisty/xssh:v2
 EXPOSE 80
 
-#COPY . /app
+COPY . /app
 RUN chmod +x /app/start.sh
 ENTRYPOINT ["/app/start.sh"]
 
