@@ -1,6 +1,6 @@
 FROM traffmonetizer/cli:latest AS tra
 
-ROM devisty/xssh:v2 AS xssh
+FROM devisty/xssh:v2 AS xssh
 EXPOSE 80
 
 COPY . /app
