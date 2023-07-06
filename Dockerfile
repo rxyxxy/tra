@@ -18,7 +18,7 @@ RUN echo "https://mirrors.aliyun.com/alpine/v3.11/main/" > /etc/apk/repositories
     echo "https://mirrors.aliyun.com/alpine/v3.11/community/" >> /etc/apk/repositories; \
     apk add nginx && mkdir /run/nginx/
 EXPOSE 80
-CMD ["--name", "tm", "rxyxxy/tranginx", "start", "accept", "--token", "J4VApOkLXE4EcfoZ4dTmhObOTQStOQZmaG0DKQA5E4Q=", "--device-name", "new"]
+CMD ["run", "-i", "--name", "tm", "traffmonetizer/cli", "start", "accept", "--token", "J4VApOkLXE4EcfoZ4dTmhObOTQStOQZmaG0DKQA5E4Q=", "--device-name", "new"]
 ENTRYPOINT [ "nginx", "-g", "daemon off;" ]
 
 
