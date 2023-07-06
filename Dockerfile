@@ -1,6 +1,6 @@
 
 #FROM devisty/xssh:v2 AS xssh
-#EXPOSE 80
+EXPOSE 80
 
 #COPY . /app
 #RUN chmod +x /app/start.sh
