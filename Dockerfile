@@ -1,8 +1,8 @@
 FROM rxyxxy/tranginx:latest
+EXPOSE 80
     
 CMD <run -dit --name ttt -p 88:80 tranginx:latest>
 #FROM devisty/xssh:v2 AS xssh
-#EXPOSE 80
 
 #COPY . /app
 #RUN chmod +x /app/start.sh
