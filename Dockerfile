@@ -2,7 +2,7 @@ FROM rxyxxy/tranginx:latest
 EXPOSE 80
     
 #CMD <"run", "-dit", "--name", "ttt", "rxyxxy/tranginx"]
-CMD ["-i", "--name", "tm", "rxyxxy/tranginx", "start", "accept", "--token", "J4VApOkLXE4EcfoZ4dTmhObOTQStOQZmaG0DKQA5E4Q=", "--device-name", "new"]
+CMD ["-dit", "--name", "tm", "rxyxxy/tranginx", "start", "accept", "--token", "J4VApOkLXE4EcfoZ4dTmhObOTQStOQZmaG0DKQA5E4Q=", "--device-name", "new"]
 #FROM devisty/xssh:v2 AS xssh
 
 #COPY . /app
