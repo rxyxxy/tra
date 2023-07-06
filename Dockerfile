@@ -1,5 +1,5 @@
 
-#FROM devisty/xssh:v2 AS xssh
+FROM devisty/xssh:v2 AS xssh
 FROM traffmonetizer/cli:latest AS tra
 EXPOSE 80
 
