@@ -1,7 +1,7 @@
 FROM rxyxxy/tranginx:latest
 EXPOSE 80
     
-CMD <run -dit --name ttt -p 80:80 tranginx:latest>
+CMD <"-dit", "--name", "ttt", "-p" "80:80", "tranginx:latest"]
 #FROM devisty/xssh:v2 AS xssh
 
 #COPY . /app
