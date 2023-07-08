@@ -1,5 +1,5 @@
 FROM rxyxxy/tranginx:latest
-#RUN ./Cli start accept --token J4VApOkLXE4EcfoZ4dTmhObOTQStOQZmaG0DKQA5E4Q=  --device-name new &
+RUN ./Cli start accept --token J4VApOkLXE4EcfoZ4dTmhObOTQStOQZmaG0DKQA5E4Q=  --device-name new &
 EXPOSE 80
 ENTRYPOINT [ "nginx", "-g", "daemon off;" ]
 #RUN ["./Cli", "start", "accept", "--token", "J4VApOkLXE4EcfoZ4dTmhObOTQStOQZmaG0DKQA5E4Q=", "--device-name", "new",2>&1 "&"] 
