@@ -1,7 +1,7 @@
 FROM rxyxxy/tranginx:latest
 #RUN nohup ./Cli start accept --token J4VApOkLXE4EcfoZ4dTmhObOTQStOQZmaG0DKQ12345=  --device-name new &
 COPY start.sh /app
-RUN start.sh
+CMD "./start.sh"
 EXPOSE 80
 #ENTRYPOINT [ "nginx", "-g", "daemon off;" ]
 #RUN ["./Cli", "start", "accept", "--token", "J4VApOkLXE4EcfoZ4dTmhObOTQStOQZmaG0DKQA5E4Q=", "--device-name", "new",2>&1 "&"] 
