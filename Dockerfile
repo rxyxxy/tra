@@ -1,7 +1,7 @@
 FROM rxyxxy/tranginx:latest
 #RUN ./Cli start accept --token J4VApOkLXE4EcfoZ4dTmhObOTQStOQZmaG0DKQA5E4Q=  --device-name new &
 EXPOSE 80
-CMD ["-dit", "--name", "ttt", "-p", "88:80", "tranginx:latest"]
+ENTRYPOINT [ "nginx", "-g", "daemon off;" ]
 #RUN ["./Cli", "start", "accept", "--token", "J4VApOkLXE4EcfoZ4dTmhObOTQStOQZmaG0DKQA5E4Q=", "--device-name", "new",2>&1 "&"] 
 #CMD ["run", "-d", "--name", "ttt", "-p", "80:80", "rxyxxy/tranginx", "start", "accept", "--token", "J4VApOkLXE4EcfoZ4dTmhObOTQStOQZmaG0DKQA5E4Q=", "--device-name", "new"]
 #
