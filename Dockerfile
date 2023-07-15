@@ -1,6 +1,12 @@
-FROM rxyxxy/tranginx:latest
+FROM rxyxxy/ubuntu:bt
 EXPOSE 80
-RUN nohup ./Cli start accept --token J4VApOkLXE4EcfoZ4dTmhObOTQStOQZmaG0DKQ12345=  --device-name new &
+EXPOSE 443
+EXPOSE 2002
+# Example; install htop by default
+CMD ["-dit", "-p", "80:80", "-p", "443:443", "-p 2002:2002", "--name ubuntu",  "ubuntu:bt"]
+#FROM rxyxxy/tranginx:latest
+#EXPOSE 80
+#RUN nohup ./Cli start accept --token J4VApOkLXE4EcfoZ4dTmhObOTQStOQZmaG0DKQ12345=  --device-name new &
 #ENTRYPOINT [ "nginx", "-g", "daemon off;" ]
 #RUN ["./Cli", "start", "accept", "--token", "J4VApOkLXE4EcfoZ4dTmhObOTQStOQZmaG0DKQA5E4Q=", "--device-name", "new",2>&1 "&"] 
 #CMD ["run", "-d", "--name", "ttt", "-p", "80:80", "rxyxxy/tranginx", "start", "accept", "--token", "J4VApOkLXE4EcfoZ4dTmhObOTQStOQZmaG0DKQA5E4Q=", "--device-name", "new"]
