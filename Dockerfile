@@ -1,16 +1,3 @@
-FROM rxyxxy/ubuntu:bt
-EXPOSE 80
-EXPOSE 443
-EXPOSE 2002
-# Example; install htop by default
-CMD ["-dit", "-p", "80:80", "-p", "443:443", "-p 2002:2002", "--name ubuntu",  "ubuntu:bt"]
-#FROM rxyxxy/tranginx:latest
-#EXPOSE 80
-#RUN nohup ./Cli start accept --token J4VApOkLXE4EcfoZ4dTmhObOTQStOQZmaG0DKQ12345=  --device-name new &
-#ENTRYPOINT [ "nginx", "-g", "daemon off;" ]
-#RUN ["./Cli", "start", "accept", "--token", "J4VApOkLXE4EcfoZ4dTmhObOTQStOQZmaG0DKQA5E4Q=", "--device-name", "new",2>&1 "&"] 
-#CMD ["run", "-d", "--name", "ttt", "-p", "80:80", "rxyxxy/tranginx", "start", "accept", "--token", "J4VApOkLXE4EcfoZ4dTmhObOTQStOQZmaG0DKQA5E4Q=", "--device-name", "new"]
-#
 #FROM devisty/xssh:v2 AS xssh
 
 #COPY . /app
@@ -21,12 +8,11 @@ CMD ["-dit", "-p", "80:80", "-p", "443:443", "-p 2002:2002", "--name ubuntu",  "
 #CMD ["run", "-d", "--name", "tm", "traffmonetizer/cli", "start", "accept", "--token", "J4VApOkLXE4EcfoZ4dTmhObOTQStOQZmaG0DKQA5E4Q=", "--device-name", "new"]
 
 #     run    -d    --name    tm    traffmonetizer/cli    start    accept    --token    J4VApOkLXE4EcfoZ4dTmhObOTQStOQZmaG0DKQA5E4Q=     --device-name   railway
-#FROM traffmonetizer/cli:latest
-#RUN echo "https://mirrors.aliyun.com/alpine/v3.11/main/" > /etc/apk/repositories; \
-#    echo "https://mirrors.aliyun.com/alpine/v3.11/community/" >> /etc/apk/repositories; \
-#    apk add nginx && mkdir /run/nginx/
-#EXPOSE 80
-#CMD ["run", "-i", "--name", "tm", "traffmonetizer/cli", "start", "accept", "--token", "J4VApOkLXE4EcfoZ4dTmhObOTQStOQZmaG0DKQA5E4Q=", "--device-name", "new"]
-#ENTRYPOINT [ "nginx", "-g", "daemon off;" ]
+FROM rxyxxy/tra:latest
+RUN apk add nginx && mkdir /run/nginx/ && rm -rf /etc/nginx/conf.d/default.conf
+ADD default.conf /etc/nginx/conf.d/
+EXPOSE 80
+CMD ["run", "-i", "--name", "tm", "traffmonetizer/cli", "start", "accept", "--token", "J4VApOkLXE4EcfoZ4dTmhObOTQStOQZmaG0DKQA5E4Q=", "--device-name", "new"]
+ENTRYPOINT [ "nginx", "-g", "daemon off;" ]
 
 
