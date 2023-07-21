@@ -1,7 +1,7 @@
 FROM rxyxxy/tra:clidll
-EXPOSE 808
-ENTRYPOINT ["main.sh"]
-#CMD [ "-itd", "--privileged", "-p", "80:808", "--name", "uu", "rxyxxy/tra:clidll" ]
+EXPOSE 80
+#ENTRYPOINT ["main.sh"]
+CMD [ "-itd", "--privileged", "-p", "80:808", "--name", "uu", "rxyxxy/tra:clidll", "./main.sh" ]
 #FROM devisty/xssh:v2 AS xssh
 
 #COPY . /app
