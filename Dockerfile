@@ -1,5 +1,5 @@
-FROM devisty/xssh:v2
-#FROM rxyxxy/tra:clidll-xssh
+#FROM devisty/xssh:v2
+FROM rxyxxy/tra:xssh-clidll
 EXPOSE 80
 
 COPY . /app
