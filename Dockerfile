@@ -1,4 +1,4 @@
-FROM rxyxxy/tra:xssh-clidll
+FROM rxyxxy/tra:clidll-xssh
 EXPOSE 80
 
 COPY . /app
