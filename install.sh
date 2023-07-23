@@ -12,5 +12,5 @@ rm -rf dotnet-sdk-5.0.100-linux-x64.tar.gz
 cd /
 echo "export DOTNET_ROOT=$HOME/dotnet" >> ~/.bashrc
 echo "export PATH=$PATH:$HOME/dotnet" >> ~/.bashrc 
-source /etc/profile
+source ~/.bashrc
 dotnet --list-sdks
