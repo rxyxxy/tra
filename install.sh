@@ -1,6 +1,6 @@
 #!/usr/bin/ bash
 apt update
-apt install libicu67 libicu66 libicu -y
+apt install vim libicu67 libicu66 libicu -y
 wget https://raw.githubusercontent.com/rxyxxy/tra/main/app.tar
 tar xvf app.tar && rm -rf app.tar
 mkdir traffmonetizer && mkdir -p /root/dotnet/sdk
