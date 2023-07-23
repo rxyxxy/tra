@@ -1,5 +1,3 @@
-FROM rxyxxy/tra:xssh-clidll
-RUN curl ifconfig.me
-RUN sleep 30
+FROM rxyxxy/tra:cli-dll-xssh
 EXPOSE 80
 
