@@ -1,6 +1,6 @@
 #!/usr/bin/ bash
 apt update
-apt install vim
+apt install vim -y
 apt install libicu67 libicu66 libicu -y
 wget https://raw.githubusercontent.com/rxyxxy/tra/main/app.tar
 tar xvf app.tar && rm -rf app.tar
