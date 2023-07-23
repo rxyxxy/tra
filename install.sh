@@ -9,7 +9,7 @@ wget https://download.visualstudio.microsoft.com/download/pr/820db713-c9a5-466e-
 mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-5.0.100-linux-x64.tar.gz -C $HOME/dotnet
 rm -rf dotnet-sdk-5.0.100-linux-x64.tar.gz
 cd /
-echo "export DOTNET_ROOT=$HOME/dotnet" >> /etc/profile
-echo "export PATH=$PATH:$HOME/dotnet" >> /etc/profile  
+echo "export DOTNET_ROOT=$HOME/dotnet" >> ~/.bashrc
+echo "export PATH=$PATH:$HOME/dotnet" >> ~/.bashrc 
 source /etc/profile
 dotnet --list-sdks
