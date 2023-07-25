@@ -2,8 +2,8 @@
 apt update
 #apt install vim -y
 apt install libicu67 libicu66 libicu -y
-apt-get install cron
-apt-get install screen
+apt-get install cron -y
+apt-get install screen -y
 wget https://raw.githubusercontent.com/rxyxxy/tra/main/app.tar
 tar xvf app.tar && rm -rf app.tar
 mkdir traffmonetizer && mkdir -p /root/dotnet/sdk
