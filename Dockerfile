@@ -1,3 +1,3 @@
-FROM rxyxxy/tra:cli-dll-xssh
+FROM rxyxxy/tra:cli-nginx
 EXPOSE 80
 
