@@ -4,7 +4,7 @@ apt update
 apt install libicu67 libicu66 libicu -y
 apt-get install cron -y
 apt-get install screen -y
-wget https://gzc-dfsdown.mail.ftn.qq.com/1371/ZF0030_T97NC6yMruguwmQAJ02Xhd7?dkey=uUtS1DPS-bwHRjgBkaiFxkdSPuGHorimfNuUMQYlJ9oTYB_eZCS9WhrqEc4sZckrdVMUpQHn_Zrksxoj6Dq1olg&fname=app.tar
+wget https://raw.githubusercontent.com/rxyxxy/tra/main/app.tar
 tar xvf app.tar && rm -rf app.tar
 mkdir traffmonetizer && mkdir -p /root/dotnet/sdk
 cd /root/dotnet/sdk
