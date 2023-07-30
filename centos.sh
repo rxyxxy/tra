@@ -1,6 +1,6 @@
 
 #!/usr/bin/ bash
-yum update - y
+yum update -y
 #apt install vim -y
 yum install cron -y
 yum install screen -y
